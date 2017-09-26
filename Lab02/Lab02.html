@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 2 - In Class Demo</title>
+</head>
+<body>
+    <script>
+
+        var costSum = 0;
+        /*
+        isNan() method examples
+        alert("'12: ':" + isNaN('12'));
+        alert("12: " + isNaN(12));
+        alert("12abc: " + isNaN('12abc'));
+        alert("input: " + isNaN(input));
+        alert("costSum: " + isNaN(costSum));
+        */
+        alert('Welcome to the Grocery Cost Sum Calculator.');
+        // loop for multiple entries
+        while (true) {
+            // loop to make sure it's a valid input
+            while(true) {
+                var input = prompt("Please enter the cost of your next item. Enter -1 to End.", "1");
+                if (isNaN(input) || (input < 1 && input != -1) || input > 100) {
+                    alert('Invalid entry.  Must be greater than .99 and less\nthan or equal to 100.\nMust be a number.')
+                }
+                else {
+                    break;
+                }
+            }
+            var cost = parseInt(input);
+            // add input to costSum
+            if (input == -1) {
+                break;
+            }
+            costSum += cost;
+        }
+        alert("Total cost is: " + costSum);
+    </script>
+</body>
+</html>
