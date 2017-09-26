@@ -16,6 +16,7 @@
         alert("costSum: " + isNaN(costSum));
         */
         alert('Welcome to the Grocery Cost Sum Calculator.');
+        var numItems = 0;
         // loop for multiple entries
         while (true) {
             // loop to make sure it's a valid input
@@ -33,6 +34,7 @@
             if (input == -1) {
                 break;
             }
+            numItem++;
             costSum += cost;
         }
         alert("Total cost is: " + costSum);
