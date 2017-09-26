@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 2 - In Class Demo</title>
+</head>
+<body>
+    <script>
+
+        var costSum = 0;
+        var numItems = 0;
+        var costs = [];
+        var items = [];
+
+        function addItem() {
+            //while(true) {
+            // Reset the error message for a subsequent call
+            document.getElementById("errorMessage").innerHTML = "";
+
+                // input using a prompt
+                //var input = prompt("Please enter the cost of your next item. Enter -1 to End.", "1");
+                // input using an html element
+                var input = document.getElementById("itemCost").value;
+                alert(input);
+                if (isNaN(input) || (input < 1 && input != -1) || input > 100) {
+                    //alert('Invalid entry.  Must be greater than .99 and less\nthan or equal to 100.\nMust be a number.')
+                    document.getElementById("errorMessage").innerHTML = 'Invalid entry.  Must be greater than .99 and less\nthan or equal to 100.\nMust be a number.';
+                }
+                else {
+                    // It was erroring out during class because we were calling break here
+                    // since there's no while and no break, we put this logic into an else
+                    var cost = parseFloat(input);
+                    costs.push(cost);
+                    items.push(document.getElementById("item").value);
+                    numItems++;
+                    costSum += cost;
+                    displayItems();
+                    resetForm();
+                }
+            //}
+        }
+
+        function displayItems() {
+            var display = "";
+            for (i = 0; i < items.length; i++) {
+                display = display + items[i] + ": " + costs[i] + "<br>";
+            }
+            display = display + "<br><br>Total: " + costSum;
+            document.getElementById("shoppingCart").innerHTML = display;
+        }
+
+        function resetForm() {
+            document.getElementById("item").value = "";
+            document.getElementById("itemCost").value = "";
+            document.getElementById("item").focus();
+        }
+        /*
+        isNan() method examples
+        alert("'12: ':" + isNaN('12'));
+        alert("12: " + isNaN(12));
+        alert("12abc: " + isNaN('12abc'));
+        alert("input: " + isNaN(input));
+        alert("costSum: " + isNaN(costSum));
+        */
+    </script>
+    <h1>Grocery Item Calculator</h1>
+    <br />
+    Enter value between 1 and 100.
+    <br /><br />
+    <span id="errorMessage" style="color:red"></span>
+    <br />
+    Item Description <br /><input type="text" id="item" placeholder="Item Description" value="" />  <br /><br />
+    Item Cost <br /><input type="text" id="itemCost" placeholder="Cost" value="" /> <br /><br />
+    <button onclick="addItem()">Input Item</button>  <br /><br />
+    <h2>Current Items:</h2>
+    <span id="shoppingCart"></span>
+    <!--
+    <input type="button" value="Input Item" onclick="addItem()" />
+    -->
+</body>
+</html>
