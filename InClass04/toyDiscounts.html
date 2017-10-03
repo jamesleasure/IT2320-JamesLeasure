@@ -4,25 +4,36 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script>
+        function CheckValues() {
+
+        }
+    </script>
 </head>
 <body>
     <span>Welcome to the Tri-C Information Toy Store. By signing up today, you will receive special discounts on all of our exciting products.<br /><br /></span>
-    <span>
+    <div>
         Employees:
         <ul>
             <li>Al Dente</li>
             <li>Will Wynn</li>
             <li>Tim Burr</li>
         </ul>
-    </span>
-    <form>
-        Name<br /><input id="name" type="text" /><br /><br />
-        Address<br /><input id="address" type="text" /><br /><br />
-        City<br /><input id="city" type="text" /><br /><br />
-        State<br /><input id="state" type="text" /><br /><br />
-        Zip<br /><input id="zip" type="text" /><br /><br />
-        Phone<br /><input id="phone" type="text" /><br /><br />
-        <input id="name" type="submit" value="Sign Up" />
-    </form>
+    </div>
+    <form action="">
+        Name<br /><input id="name" type="text" /> <span id="name_error"></span><br /><br />
+        Address<br /><input id="address" type="text" /><span id="address_error">
+    <br /><br />
+    City<br /><input id="city" type="text" /><span id="city_error">
+    <br /><br />
+    State<br /><input id="state" type="text" /><span id="state_error">
+    <br /><br />
+    Zip<br /><input id="zip" type="text" /><span id="zip_error">
+    <br /><br />
+    Phone<br /><input id="phone" type="text" /><span id="phone_error">
+    <br /><br />
+    <!--<input id="name" type="submit" value="Sign Up" />-->
+    <input type="button" value="Sign Up" onclick="CheckValues()" />
+</form>
 </body>
 </html>
