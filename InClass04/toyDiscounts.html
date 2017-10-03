@@ -4,13 +4,34 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        .error { color: red; }
+        .highlight { background-color: yellow; }
+        .fontYellow { color: yellow; }
+    </style>
     <script>
         var $ = function(id) {
             return document.getElementById(id);
         }
         function CheckValues() {
-            alert('check Values called');
             $("name_error").firstChild.nodeValue = "Invalid Name";
+            $("name_error").setAttribute("class", "error");
+        }
+
+        function TurnOn() {
+            // get the first li element and add class=fontYellow
+            document.getElementsByTagName("li")[0].setAttribute("class", "fontYellow");
+            // loop through all li elements on the page
+            var listItems = document.getElementsByTagName("li");
+            for (i = 0; i < listItems.length; i++) {
+                listItems[i].setAttribute("class", "fontYellow");
+            }
+        }
+        function highlightEmployee(sender) {
+            sender.setAttribute("class", "highlight");
+        }
+        function unhighlightEmployee(sender) {
+            sender.removeAttribute("class");
         }
     </script>
 </head>
@@ -19,10 +40,12 @@
     <div>
         Employees:
         <ul>
-            <li>Al Dente</li>
-            <li>Will Wynn</li>
-            <li>Tim Burr</li>
+            <li><span onmouseover="highlightEmployee(this)" onmouseout="unhighlightEmployee(this)">Al Dente</span></li>
+            <li onmouseover="highlightEmployee(this)" onmouseout="unhighlightEmployee(this)">Will Wynn</li>
+            <li onmouseover="highlightEmployee(this)" onmouseout="unhighlightEmployee(this)">Tim Burr</li>
         </ul>
+        <input type="button" value="Turn On" onclick="TurnOn()" />
+        <input type="button" value="Turn Off" onclick="TurnOff()" />
     </div>
     <form action="">
         Name<br /><input id="name" type="text" /> <span id="name_error"> </span><br /><br />
