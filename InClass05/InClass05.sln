@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01B5A7D8-FE2C-4598-90FC-4FD3E6B7FB7D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Desktop\InClass06\future_value.css = ..\..\..\..\..\..\Desktop\InClass06\future_value.css
+		..\..\..\..\..\..\Desktop\InClass06\future_value.js = ..\..\..\..\..\..\Desktop\InClass06\future_value.js
+		..\..\..\..\..\..\Desktop\InClass06\index.html = ..\..\..\..\..\..\Desktop\InClass06\index.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
