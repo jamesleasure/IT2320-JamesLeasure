@@ -39,7 +39,19 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <style>
+        #london, #paris, #tokyo { display: none; }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#linkLondon').click(function () {
+                $("#london").slideDown(1000);
+            });
+            $('#linkParis').click(function () {
+                $("#paris").slideDown(1000);
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -51,9 +63,9 @@
 
         <nav>
             <ul>
-                <li><a href="#">London</a></li>
-                <li><a href="#">Paris</a></li>
-                <li><a href="#">Tokyo</a></li>
+                <li><a id="linkLondon" href="#">London</a></li>
+                <li><a id="linkParis" href="#">Paris</a></li>
+                <li><a id="linkTokyo" href="#">Tokyo</a></li>
             </ul>
         </nav>
 
