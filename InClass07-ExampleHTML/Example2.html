@@ -39,16 +39,52 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js" integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE=" crossorigin="anonymous"></script>
     <style>
-        #london, #paris, #tokyo { display: none; }
+        #paris, #tokyo, #london, #cleveland { display: none; }
     </style>
     <script>
+        function hideAll() {
+            $("#london").hide();
+            $("#paris").hide();
+            $("#tokyo").hide();
+        }
+
         $(document).ready(function () {
             $('#linkLondon').click(function () {
-                $("#london").slideDown(1000);
+                hideAll();
+                var div = $("#london");
+                // Chaining
+                //div.slideDown(1000).animate({backgroundColor: "#aa0000",color: "#fff",width: 500}, 1000);
+                div.slideDown(1000).css("color", "red");
             });
             $('#linkParis').click(function () {
-                $("#paris").slideDown(1000);
+                hideAll();
+                // Callback 
+                var div = $('#paris');
+                div.slideDown(1000, function () {
+                    /*$("#paris").animate({
+                        backgroundColor: "#aa0000",
+                        color: "#fff",
+                        width: 500
+                    }, 1000);
+                    */
+                    div.css("color", "red");
+                });
+            });
+            $("#linkTokyo").on("click", function () {
+                hideAll();
+                // Queued Effects
+                $("#tokyo").slideDown(1000);
+                $("#tokyo").animate({
+                    backgroundColor: "#aa0000",
+                    color: "#fff",
+                    width: 500
+                });
+            });
+            $('#linkCleveland').click(function () {
+                hideAll();
+                setInterval(function () { $("#cleveland").slideToggle() }, 1000);
             });
         });
     </script>
@@ -66,6 +102,7 @@
                 <li><a id="linkLondon" href="#">London</a></li>
                 <li><a id="linkParis" href="#">Paris</a></li>
                 <li><a id="linkTokyo" href="#">Tokyo</a></li>
+                <li><a id="linkCleveland" href="#">Cleveland</a></li>
             </ul>
         </nav>
 
@@ -91,6 +128,17 @@
                 <p>
                     It is the center of the Greater Tokyo Area,
                     and the most populous metropolitan area in the world.
+                </p>
+            </div>
+
+            <div id="cleveland">
+                <h1>Cleveland, Ohio</h1>
+                <p>Cleveland is a city in Northeast Ohio</p>
+                <p>
+                    Cleveland, OH is a city in Northeast Ohio.  It is located
+                    on the southern border of Lake Erie.  Cleveland has several
+                    incredibly successful pro sports teams including the
+                    Indians, Browns, and Cavaliers.
                 </p>
             </div>
 
