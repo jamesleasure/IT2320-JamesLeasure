@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A458D361-9B93-40E0-8B2D-35044E98A96D}"
 	ProjectSection(SolutionItems) = preProject
 		Lab07-HTMLValidate.html = Lab07-HTMLValidate.html
+		Lab07-jQueryPlugin.html = Lab07-jQueryPlugin.html
 		Lab07-jQueryValidate.html = Lab07-jQueryValidate.html
 		Lab07-JSValidate.html = Lab07-JSValidate.html
 	EndProjectSection

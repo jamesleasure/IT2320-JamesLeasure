@@ -81,23 +81,27 @@
     </style>
 </head>
 <body>
-    <form action="https://www.w3schools.com/action_page_post.php" method="post">
+    <form action="https://www.w3schools.com/action_page_post.php" method="post" novalidate>
         <div class="formLayout">
             <div id="divh1">Sign Up</div>
             <div id="divh2" class="lineLayout">It's free.</div>
             <div class="lineLayout">
-                <input type="text" id="firstName" name="firstName" placeholder="First name" class="smallinput" />&nbsp;&nbsp;
-                <input type="text" id="lastName" name="lastName" placeholder="Last name" class="smallinput" />
+                <input type="text" id="firstName" name="firstName" placeholder="First name" class="smallinput" required pattern="[a-Z]{3,}" title="Must be at least 3 characters long" />&nbsp;&nbsp;
+                <input type="text" id="lastName" name="lastName" placeholder="Last name" class="smallinput" required />
             </div>
             <div class="lineLayout">
-                <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" class="biginput" />
+                <input type="email" id="emailAddress" name="emailAddress" placeholder="Email Address" class="biginput" required />
             </div>
             <div class="lineLayout">
-                <input type="text" id="emailVerify" placeholder="Re-enter email" class="biginput" />
+                <input type="email" id="emailVerify" placeholder="Re-enter email" class="biginput" required />
             </div>
             <div class="lineLayout">
                 <label for="birthdate">Birth Date</label><br />
-                <input type="date" id="birthdate" name="birthdate" placeholder="Birth Date" class="biginput" />
+                <input type="date" id="birthdate" name="birthdate" placeholder="Birth Date" class="biginput" required />
+            </div>
+            <div class="lineLayout">
+                <label for="phone">Phone</label><br />
+                <input type="tel" id="phone" name="phone" placeholder="Phone number" class="biginput" required />
             </div>
             <div class="lineLayout">
                 <button type="submit">Sign Up</button>

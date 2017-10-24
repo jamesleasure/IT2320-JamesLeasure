@@ -3,6 +3,7 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <style>
         #divh1 {
             color: #141823;
@@ -81,8 +82,31 @@
         }
     </style>
     <script>
-        $(document).ready(function () { 
+        $(document).ready(function () {
+            $("#signup").validate({
+                rules: {
+                    firstName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    lastName: {
+                        required: true,
+                        minlength: 1
+                    }
+                },
+                messages: {
+                    firstName: {
+                        required: "First Name is required",
+                        minlength: "First Name must be at least 2 characters"
+                    },
+                    lastName: {
+                        required: "Last Name is required",
+                        minlength: "First Name must be at least 1 character1"
+                    }
+                }
+            });
             //function validateForm() {
+            /*
             $("#signup").submit(
                 function (event) {
                 alert('validating form');
@@ -100,7 +124,7 @@
                 if (!isValid) {
                     event.preventDefault();
                 }
-            }
+            }*/
         });
     </script>
 </head>
