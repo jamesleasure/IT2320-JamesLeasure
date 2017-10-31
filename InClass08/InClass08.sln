@@ -3,8 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8263F669-E490-4E24-A93C-CF15384C7F69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "toc", "toc", "{79B06825-8653-434A-9332-A50ED3371CEF}"
+	ProjectSection(SolutionItems) = preProject
+		toc\index.html = toc\index.html
+		toc\toc.css = toc\toc.css
+		toc\toc.js = toc\toc.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "employee_list", "employee_list", "{C5EAA6D4-56F1-4602-B45B-4FD85E93845D}"
+	ProjectSection(SolutionItems) = preProject
+		employee_list\employees.js = employee_list\employees.js
+		employee_list\index.html = employee_list\index.html
+		employee_list\main.css = employee_list\main.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{5D3A714C-4A2D-4171-AC8F-A554C6369AAD}"
+	ProjectSection(SolutionItems) = preProject
+		employee_list\images\minus.png = employee_list\images\minus.png
+		employee_list\images\plus.png = employee_list\images\plus.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79B06825-8653-434A-9332-A50ED3371CEF} = {8263F669-E490-4E24-A93C-CF15384C7F69}
+		{C5EAA6D4-56F1-4602-B45B-4FD85E93845D} = {8263F669-E490-4E24-A93C-CF15384C7F69}
+		{5D3A714C-4A2D-4171-AC8F-A554C6369AAD} = {C5EAA6D4-56F1-4602-B45B-4FD85E93845D}
 	EndGlobalSection
 EndGlobal

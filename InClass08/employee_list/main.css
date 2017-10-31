@@ -19,7 +19,6 @@ h2 {
 }
 header h2 {
 	text-align: center;
-	color: blue;
 	padding-bottom: 1em;
 	border-bottom: 3px solid blue;
 }
@@ -39,11 +38,9 @@ h3 {
 	padding-bottom: .25em;
 }
 a {
-    color: black;
     text-decoration: none; 
 }
 a:focus, a:hover {
-	color: blue;
 }
 div {
 	display: none;
