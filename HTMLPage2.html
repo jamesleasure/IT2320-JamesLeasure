@@ -1,0 +1,96 @@
+﻿<html class="gr__bblearn_tri-c_edu">
+<head>
+    <style>
+        h2 {
+            border-top: solid thin;
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+<body data-gr-c-s-loaded="true">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Problem 1 (add code for each problem below)
+            $("#btnSlideUp").click(function () {
+                $("p").slideUp();
+            });
+            $("#btnSlideDown").click(function () {
+                $("p").slideDown();
+            });
+        });
+    
+        $(document).ready(function () {
+            // Problem 2 (add code for each problem below)
+            $("#btnFadeIn").click(function () {
+                $("p").fadeIn();
+            });
+            $("#btnFadeOut").click(function () {
+                $("p").fadeOut();
+            });
+            $(document).ready(function () {
+                // Problem 3 (add code for each problem below)
+                $("#btnSideUpDown").click(function () {
+                    $("p").slideUp().slideDown();
+                });
+            });
+            $(document).ready(function () {
+                // Problem 2 (add code for each problem below)
+                $("#btnFadeOutIn").click(function () {
+                    $("p").fadeOut() .fadeIn();
+                });
+
+                });
+        // Problem 5
+        });
+    </script>
+
+
+    <h1><b>IT 2320 - Lab 6</b><br>[Jorden]</h1>
+    <!--Note that all effects and animations will apply to this paragraph!-->
+    <p>This is a paragraph. Change me in each of the problems below.</p>
+
+    <h2>
+        1. Use the slideUp() and slideDown() methods to toggle the visibility of the
+        paragraph element on the following page (4 points).
+    </h2>
+    <button id="btnSlideUp">Slide up</button>
+    <button id="btnSlideDown">Slide down</button>
+
+    <h2>
+        2. Modify code from question 1, so that it uses fadeIn() and fadeOut() respectively
+        as opposed to slideUp() and slideDown().  Set the fadeOut() duration to 2 seconds.
+        Set fadeIn() to 400 milliseconds (or leave its default) (4 points).
+    </h2>
+    <button id="btnFadeIn">Fade In</button>
+    <button id="btnFadeOut">Fade Out</button>
+
+    <h2>
+        3. Use chaining to combine both animations from problem 1.  Set the durations to anything less than 3 seconds (4 points).
+    </h2>
+    <button id="btnSideUpDown">Slide up then slide down</button>
+
+    <h2>
+        4.	Use a callback function to combine the two effects from problem 2.
+        Set the durations to anything less than 3 seconds (4 points).
+        Explain in a comment the difference between using chaining versus callback functions.
+    </h2>
+    <button id="btnFadeOutIn">Fade Out then fade in</button>
+
+    <h2>
+        5. Call the  animate() method with 1) a duration, 2) CSS properties, and 3) easing.  Use the following
+        for documentation and examples. <br>
+        <a href="http://api.jquery.com/animate/" target="_blank">http://api.jquery.com/animate/</a><br>
+        <a href="https://www.w3schools.com/jquery/jquery_animate.asp" target="_blank">https://www.w3schools.com/jquery/jquery_animate.asp</a>
+    </h2>
+    <button id="btnAnimate">Animate</button>
+
+
+
+</body>
+</html>
