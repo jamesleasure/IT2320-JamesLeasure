@@ -15,7 +15,6 @@ $(document).ready(function () {
 	    } else {
 	        $(this).wrap("<h1></h1>");
 	    }
-	    alert($(this).next().html());
 	}); 
     
     $("#add").click(function() {
