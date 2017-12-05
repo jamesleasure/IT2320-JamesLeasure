@@ -149,9 +149,9 @@
             <h3>Contact Information</h3>
             <p>Please enter all contact information below.</p>
             <p><input type="text" id="firstName" name="firstName" placeholder="First Name"></p>
-            <p><nput type="text" id="lastName" name="lastName" placeholder="Last Name"></p>
+            <p><input type="text" id="lastName" name="lastName" placeholder="Last Name"></p>
             <p><input type="text" id="phone" name="phone" placeholder="Phone Number"></p>
-            <p><ion-input type="text" id="email" name="email" placeholder="Email Address"></p>
+            <p><input type="text" id="email" name="email" placeholder="Email Address"></p>
             <p><br><br><input type="button" id="next" name="next" value="Next Step - Create Order" onclick="openSection(event, 'orderItems')">
         </div>
         <div id="orderItems" class="tabcontent">
@@ -192,7 +192,7 @@
                 <div class="container">
                     <div class="fixed">
                         <input type="text" id="creditCardName" name="creditCardName" placeholder="Name on Card" onblur="verifyPayment()" onmouseout="verifyPayment()"><br><br>
-                        <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Credit Card Number" onmouseout=""="verifyPayment()" onblur=""="verifyPayment()"><br><br>
+                        <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Credit Card Number" onmouseout="verifyPayment()" onblur="verifyPayment()"><br><br>
                         <input type="text" id="creditCardSecurityCode" name="creditCardSecurityCode" placeholder="Security Code" onmouseout="verifyPayment()" onblur="verifyPayment()"><br>
                     </div>
                     <div class="flex-item"><span id="creditOkay" style="display:none">&#10004;</span></div>
