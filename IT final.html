@@ -1,0 +1,274 @@
+﻿<html>
+<head>
+    <!-- Demo of Solution: http://www.youtube.com/watch?v=jQiAUulIuUw -->
+    <title>IT 2320 - Final Project</title>
+    <style>
+        body {
+            color: charcoal;
+            font-family: Verdana, Helvetica;
+            font-size: 0.8em;
+            padding-bottom: 10px;
+        }
+
+        div.tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+            div.tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+            }
+
+                div.tab button:hover {
+                    background-color: #ddd;
+                }
+
+                div.tab button.active {
+                    background-color: #ccc;
+                }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        #header {
+            font-size: 28px;
+            color: darkorange;
+            font-family: Verdana, Helvetica;
+            padding-bottom: 10px;
+        }
+
+        #creditOkay {
+            font-size: 40px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .fixed {
+            width: 200px;
+        }
+
+        .flex-item {
+            flex-grow: 1;
+        }
+    </style>
+    <script>
+        // menuItems[] and menuCosts[] hold all menu items that are available
+        var menuItems = [
+            "Small Coffee", "Medium Coffee", "Large Coffee",
+            "Small Tea", "Medium Tea", "Large Tea",
+            "Soda", "Bottled Water", "Chips", "Candy"
+        ];
+        menuItems.push(currentItems);
+        
+        var menuCosts = [
+            1, 1.25, 1.5, 1, 1.25, 1.5, 1.5, 1.25, 1.25, 1
+        ];
+        menuCosts.push(currentCosts);
+        // currentItems[] and currentCosts[] will hold the current items that have been added
+        //      Tip: use F12 to open developer tools and see what's currently in these arrays as you modify code
+        var currentItems = [];
+       
+        var currentCosts = [];
+        var totalCost = 0;
+        var paymentVerified = false;
+        // Open Section is used for changing the active tab on the page.
+        // To Do: You should call this function from each of the buttons used for next step
+        function openSection(evt, sectionName) {
+            // Start of code for tabs.  Do not change!
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(sectionName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // verifyPayment() is called from the Payment Info tab and determines if the credit information
+        //      is formatted correctly.  It should display a check mark if the code is valid.
+        function verifyPayment() {
+            // Problem 1 - Check the values entered for payment and change paymentVerified to true if valid
+            //      To Do: verify that #creditCardNumber length is between 13 and 19 characters long
+            //      To Do: make sure #creditCardSecurityCode is 3 or 4 characters in length
+            //      To Do: make sure #creditCardName is not ""
+            //      Tip: for each of these, you just have to fill in the correct condition
+            paymentVerified = true;
+            
+            // Use the following code for Problem 1
+            if (creditCardNumber) {
+                if (creditCardSecurityCode) {
+                    if (creditCardName) {
+                        paymentVerified = true;
+                        document.getElementById('creditOkay').style.display = 'block';
+                    }
+               }
+            }
+            if (paymentVerified == false) {
+                document.getElementById('creditOkay').style.display = 'none';
+            }
+            
+
+        }
+        // addItem() is called each time a new item is selected in the Create Order tab
+        function addItem() {
+            
+        
+            // Problem 2 - Each time a selection is added to the order, add it to currentItems[] and currentCosts[]
+            //      To Do: add current selected item from menuItems[] to currentItems[]
+            //      Tip: use push() https://www.w3schools.com/jsref/jsref_push.asp
+            //      To Do: add current selected item from menuCosts[] to currentCosts[]
+            //      Tip: use push() https://www.w3schools.com/jsref/jsref_push.asp
+            
+        }
+        function addItem(){ orderItem.push("currentItems"); document.getElementById('justAdded').innerHTML = 'Just added: ' + menuItems[document.getElementById("orderItem").value];
+            document.getElementById('justAdded').style.display = 'block';
+            window.setTimeout(function () {
+                document.getElementById('justAdded').style.display = 'none';
+            }, 1000);
+            showSummary();
+            document.getElementById("orderItem").value = "-1";
+
+        }
+        // showSummary() is called each time addItem() is called
+        //      Note: here's a problem: it doesn't add the contact info until we add a menu item
+        //            feel free to fix it!  No credit will be gained or lost.
+        function showSummary() {
+            // To Do: remove alert message
+            var orderDetails = "";
+            var subtotal = 0;
+            var tax = .28;
+            var total = 0;
+            // Problem 3 - Display a summary for #orderDetails.  The summary should display
+            //      under the Create Order and Complete Order tabs.
+            //      To Do: populate the summary section with order details #orderDetails
+            //      Tip: loop through currentItems (and currentCosts) add items to orderDetails
+            //       display orderDetails in #orderDetails and #currentOrder
+            //      To Do: populate the current order with order details #currentOrder
+            // Problem 4 - Inside of the loop that you created, calculate subtotal.
+            //      To Do: Calculate subtotal
+            // Problem 5 - To Do: After the loop calculates subtotal (after the loop) - calculate tax and total
+            //      Then display subtotal, tax, and total under Complete Order tab
+            // Problem 6 - To Do: When you display the previous values, also assign them to the hidden form
+            //      elements fullName, orderSubtotal, orderTax, and orderTotal
+
+            // To Do: display subtotal, tax and total
+            // Tip:
+            if (currentItems.length > 0) {
+            }
+            else {
+                document.getElementById("orderDetails").innerHTML = 'No items. Please click "Create Order" to add items.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="header">Finals Week Coffee Cart</div>
+    <div class="tab">
+        <button class="tablinks" onclick="openSection(event, 'orderContact')">Contact Info</button>
+        <button class="tablinks" onclick="openSection(event, 'orderItems')">Create Order</button>
+        <button class="tablinks" onclick="openSection(event, 'orderPayment')">Payment Info</button>
+        <button class="tablinks" onclick="openSection(event, 'orderSummary')">Complete Order</button>
+    </div>
+    <form action="https://www.w3schools.com/action_page_post.php" method="post">
+        <input type="hidden" id="orderSubtotal" name="orderSubtotal" value="">
+        <input type="hidden" id="orderTax" name="orderTax" value="">
+        <input type="hidden" id="orderTotal" name="orderTotal" value="">
+        <input type="hidden" name="fullName" id="fullName" value="">
+        <div id="orderContact" class="tabcontent">
+            <h3>Contact Information</h3>
+            <p>Please enter all contact information below.</p>
+            <p><input type="text" id="firstName" name="firstName" placeholder="First Name"></p>
+            <p><input type="text" id="lastName" name="lastName" placeholder="Last Name"></p>
+            <p><input type="text" id="phone" name="phone" placeholder="Phone Number"></p>
+            <p><input type="text" id="email" name="email" placeholder="Email Address"></p>
+            <p><br><br><input type="button" id="next" name="next" value="Next Step - Create Order" onclick="openSection(event, 'orderItems')">
+        </div>
+        <div id="orderItems" class="tabcontent">
+            <h3>Enter your Order</h3>
+            <p>
+                <div class="container">
+                    <div class="fixed">
+                        <!-- 1, 1.25, 1.5, 1, 1.25, 1.5, 1.5, 1.25, 1.25, 1 -->
+                        <select id="orderItem" onselect="addItem()">
+                            <optgroup label="Coffees">
+                                <option value="-1">Select an Item</option>
+                                <option value="0">Small Coffee $1.00</option>
+                                <option value="1">Medium Coffee $1.25</option>
+                                <option value="2">Large Coffee $1.50</option>
+                                <option value="3">Small Tea $1.00</option>
+                                <option value="4">Medium Tea $1.25</option>
+                                <option value="5">Large Tea $1.50</option>
+                                <option value="6">Soda $1.50</option>
+                                <option value="7">Bottled Water $1.25</option>
+                                <option value="8">Chips $1.25</option>
+                                <option value="9">Candy $1.00</option>
+                        </select>
+                    </div>
+                    <div class="flex-item" id="justAdded"></div>
+                </div>  
+                <h3>Current Order</h3>
+                
+                <div id="currentOrder"></div>
+              
+            <p> 
+                <br><br><input type="button" id="next" name="next" value="Next Step - Enter Payment Info" onclick="openSection(event, 'orderPayment')">
+            </p>
+        </div>
+        <div id="orderPayment" class="tabcontent">
+            <h3>Enter Payment Information</h3>
+            <p>
+                <div class="container">
+                    <div class="fixed">
+                        <input type="text" id="creditCardName" name="creditCardName" placeholder="Name on Card" onblur="verifyPayment()" onmouseout="verifyPayment()"><br><br>
+                        <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Credit Card Number" onmouseout="verifyPayment()" onblur="verifyPayment()"maxlength="19" minlength="13"><br><br>
+                        <input type="text" id="creditCardSecurityCode" name="creditCardSecurityCode" placeholder="Security Code" onmouseout="verifyPayment()" onblur="verifyPayment()" maxlength="4" minlength="3"><br>
+                    </div>
+                    <div class="flex-item"><span id="creditOkay" style="display:none">&#10004;</span></div>
+                </div>
+            </p>
+            <p>
+                <br><br><input type="button" id="next" name="next" value="Next Step - Confirm and Submit" onclick="openSection(event, 'orderSummary')">
+            </p>
+        </div>
+        <div id="orderSummary" class="tabcontent">
+            <h3>Submit Order</h3>
+            <p>Check your Order Summary and submit.</p>
+            width: 500px;
+            height: 500px;
+            background-color: lightblue;
+            }
+            </style>
+            </head>
+            <body>
+                <h3 style="color:navy">Contact Information</h3>
+                <div id="summaryContactInfo"></div>
+                <h3 style="color:navy">Order Details</h3>
+                <div id="orderDetails"> </div>
+                <h3 style="color:darkorange">Totals</h3>
+                <b>Subtotal</b>: <span id="subtotal"> </span><br>
+                <b>Tax</b>: <span id="tax"> </span><br>
+                <b>Total</b>: <span id="total"> </span><br>
+                <p><br><br><input type="submit" value="Submit Order">
+</div>
+        </div>
+    </form>
+</body>
+</html>
